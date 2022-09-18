@@ -1,0 +1,2 @@
+4 de agosto
+Realizar un programa que realice la operación de potenciación. Elevar base a exponente.
