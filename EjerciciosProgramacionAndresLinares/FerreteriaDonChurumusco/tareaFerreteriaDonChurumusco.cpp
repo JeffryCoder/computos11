@@ -38,6 +38,24 @@ int main ()
             cout << " --- --- --- --- ---" << endl;
             cout << "Listando articulos..." << endl;
             cout << " --- --- --- --- ---" << endl;
+
+// Inicio de lo introducido para leer archivo
+            cout << " Ferreteria Don Churumusco" << endl << endl;
+            cout << "Listado de articulos en existencia:" << endl << endl;
+            cout << "--------------------------------------------------------------------------------" << endl;
+            cout << "     Cod.  Articulo                     Marca                      Precio       " << endl;
+            cout << "--------------------------------------------------------------------------------" << endl;
+            // CONTENIDO
+            cout << endl << endl << endl;
+                    //1.    Martillo                     Trupper                    240.00
+                    //2.    Lámpara Led 8” Techo         General Electric           675.50
+                    //        …	                            …                        …	
+                    //     …	                            …                        …	
+                    //   …	                            …                        …	
+                    //25.   Sierra Caladora 3/4          Black & Decker           3,832.00
+            // FIN CONTENIDO
+            cout << "--------------------------------------------------------------------------------" << endl;
+  // Final de lo introducido para leer archivo
             TeclaPresionada("Pulse una tecla para continuar...");
             break;
         case '2':
