@@ -82,7 +82,7 @@ int main ()
         default:
             BorraPantalla();
             cout << " --- --- --- --- ---" << endl;
-            cout << "Elija una opcion valida..." << endl;
+            cout << "Elia una opcion valida..." << endl;
             cout << " --- --- --- --- ---" << endl;
             TeclaPresionada("Pulse una tecla para continuar...");
             break;
