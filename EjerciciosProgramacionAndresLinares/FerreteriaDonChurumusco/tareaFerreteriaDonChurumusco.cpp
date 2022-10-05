@@ -7,7 +7,9 @@ int main ()
 {
     BorraPantalla(); // Limpiador de consola
     char opcionElegida = ' ';
+    const int MAX = 20;
 
+    string FilasArregloArticulos[][]
     do {
         BorraPantalla();
         cout << endl; // Salto de linea
