@@ -3,10 +3,21 @@
 #include "esconu.h"
 using namespace std;
 
+const int MAX = 3; 
+//Organizador de articulo
 int main ()
 {
     BorraPantalla(); // Limpiador de consola
     char opcionElegida = ' ';
+    char confirmacionDeEliminacion = ' ';
+    int CodigoArticuloAEliminar = NULL;
+    int contadorDeArticulos = 0;
+    string arregloCodigoArticulo[MAX];
+    string arregloNombreArticulos[MAX];
+    string arregloMarcaArticulo[MAX];
+    string arregloPrecioArticulo[MAX];
+
+    
 
     do {
         BorraPantalla();
@@ -39,30 +50,64 @@ int main ()
             cout << "Listando articulos..." << endl;
             cout << " --- --- --- --- ---" << endl;
 
-// Inicio de lo introducido para leer archivo
+            // Inicio de lo introducido para leer archivo
             cout << " Ferreteria Don Churumusco" << endl << endl;
             cout << "Listado de articulos en existencia:" << endl << endl;
             cout << "--------------------------------------------------------------------------------" << endl;
-            cout << "     Cod.  Articulo                     Marca                      Precio       " << endl;
+            cout << "Cod.      Articulo                     Marca                      Precio       " << endl;
             cout << "--------------------------------------------------------------------------------" << endl;
-            // CONTENIDO
-            cout << endl << endl << endl;
-                    //1.    Martillo                     Trupper                    240.00
-                    //2.    Lámpara Led 8” Techo         General Electric           675.50
-                    //        …	                            …                        …	
-                    //     …	                            …                        …	
-                    //   …	                            …                        …	
-                    //25.   Sierra Caladora 3/4          Black & Decker           3,832.00
+            // -------- ------ ----- CONTENIDO ---- ---- ---- /
+
+            // Arreglo para imprimir las posiciones guardadas
+
+            if (contadorDeArticulos != 0)
+            {
+                for (int i = 0; i < contadorDeArticulos; i++)
+                {
+                    cout << i + 1 << ".         " << arregloNombreArticulos[i] << "                      " << arregloMarcaArticulo[i] << "                        " << arregloPrecioArticulo[i] << endl;
+                }
+            }
+            else
+            {
+                cout << "La ferreteria no tiene articulos registrados..." << endl;
+            }
             // FIN CONTENIDO
             cout << "--------------------------------------------------------------------------------" << endl;
-  // Final de lo introducido para leer archivo
+            // Final de lo introducido para leer archivo
+
+            // Llenador de arreglos           
             TeclaPresionada("Pulse una tecla para continuar...");
             break;
         case '2':
             BorraPantalla();
+            
+            cout << " Ferreteria Don Churumusco" << endl << endl;
             cout << " --- --- --- --- ---" << endl;
             cout << "Agregando articulos..." << endl;
             cout << " --- --- --- --- ---" << endl;
+            cout << "--------------------------------------------------------------------------------" << endl;
+            cout << "     Cod.  Articulo                     Marca                      Precio       " << endl;
+            cout << "--------------------------------------------------------------------------------" << endl;
+            // Imprimir arreglo
+
+            for (int i = 0; i < 1; i++)
+            {
+                cout << "Ingrese nombre del articulo...: ";
+                cin >> arregloNombreArticulos[i + contadorDeArticulos];
+                cout << endl;
+
+                cout << "Ingrese la marca del articulo...: ";
+                cin >> arregloMarcaArticulo[i + contadorDeArticulos];
+                cout << endl;
+
+                cout << "Ingrese el precio del articulo...: ";
+                cin >> arregloPrecioArticulo[i + contadorDeArticulos];
+                cout << endl;
+
+
+
+            }
+            contadorDeArticulos = contadorDeArticulos + 1;
             TeclaPresionada("Pulse una tecla para continuar...");
             break;
         case '3':
@@ -70,6 +115,42 @@ int main ()
             cout << " --- --- --- --- ---" << endl;
             cout << "Eliminando articulos..." << endl;
             cout << " --- --- --- --- ---" << endl;
+
+
+            cout << "Ingrese el codigo del articulo a eliminar...: ";
+            cin >> CodigoArticuloAEliminar;
+
+            // Haciendo compatible para trabajar con indices de arreglos
+
+            if (CodigoArticuloAEliminar > 0)
+            {
+                CodigoArticuloAEliminar = CodigoArticuloAEliminar - 1;
+            }
+
+
+            cout << "Haz elegido el siguiente articulo para eliminar...: " << endl;
+            for (int i = 0; i < 1; i++)
+                {
+                    cout << CodigoArticuloAEliminar + 1 << ".         " << arregloNombreArticulos[CodigoArticuloAEliminar] << "                      " << arregloMarcaArticulo[CodigoArticuloAEliminar] << "                        " << arregloPrecioArticulo[CodigoArticuloAEliminar] << endl;
+                }
+            cout << "Pulse (S) para confirmar la eliminacion, o pulse (N), para cancelarla";
+            cin >> confirmacionDeEliminacion;
+
+            if (confirmacionDeEliminacion == 'S')
+            {
+                for 
+            }
+            else if (confirmacionDeEliminacion == 'N')
+            {
+
+            }
+
+            else 
+            {
+                cout << "Introduzca una opcion valida";
+            }
+
+
             TeclaPresionada("Pulse una tecla para continuar...");
             break;
         case '4':
@@ -91,10 +172,5 @@ int main ()
     // FINAL FLUJO DE SALIDA
 
     } while (opcionElegida != '4');
-
-    
-    
-
-
     return 0;
 }
